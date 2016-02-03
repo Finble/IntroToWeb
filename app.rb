@@ -1,16 +1,16 @@
 require 'sinatra'
 
-# get '/test' do
-# 	'ww'
+# get '/named-cat' do	
+# 	p params
+# 	@name = params[:name]
+# 	erb(:index)
 # end
 
-
-get '/random-cat' do 
-	@name = %w(Amigo Viking Oscar).sample
-	erb(:index)
+get '/cat-form' do
+	erb(:cat_form)
 end
 
-get '/named-cat' do	
+post '/named-cat' do
 	p params
 	@name = params[:name]
 	erb(:index)
