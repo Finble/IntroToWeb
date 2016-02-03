@@ -1,7 +1,27 @@
-require 'sinatra'
+<% if @name != nil %>
 
-get 'cat/' do
-  "<div style='border: 3px dashed red'>
+<h1>'My name is <%= @name %>'</h1>
+
+<% end %>
+
+
+<div style='border: 3px dashed red'>
      <img src='http://bit.ly/1eze8aE'>
-   </div>"
-end
+</div>
+
+
+
+<form name="input" action="/named-cat">
+  name: <input type="text" name="name">
+<input type="submit" name="Submit">
+</form>
+
+
+
+<!-- server.rb
+
+  post ‘/form’ do
+    @name = params[:name]
+    puts params
+    erb :params
+  end -->
